@@ -3,7 +3,10 @@ package com.example.objektivering;
 
 import java.util.ArrayList;
 
-public class TableObject{
+
+public class TableObject  {
+
+    String OrderDate , Region, Rep1, Rep2, Item, Units, UnitCost, Total;
 
     public String getOrderDate() {
         return OrderDate;
@@ -37,16 +40,26 @@ public class TableObject{
         return Total;
     }
 
-    String OrderDate, Region, Rep1, Rep2, Item, Units, UnitCost, Total;
+
 
     public TableObject(ArrayList<String> rowData) {
 
-        OrderDate =rowData.get(0);
-        Region =rowData.get(1);
-        Rep1 =rowData.get(2);
-        Rep2 =rowData.get(3);
-        Item =rowData.get(4);
-        UnitCost =rowData.get(5);
-        Total =rowData.get(6);
+        if(rowData.get(0) != null) {OrderDate = rowData.get(0);}
+
+        if(rowData.get(1) != null){   Region =rowData.get(1);}
+        if(rowData.get(2) != null){Rep1 =rowData.get(2);}
+
+        if(rowData.get(3) != null){ Rep2 =rowData.get(3);}
+
+        if(rowData.get(4) != null){ Item =rowData.get(4);}
+
+
+        if(rowData.get(5) != null){Units = rowData.get(5);}
+
+        if(rowData.get(6) != null){UnitCost = rowData.get(6);}
+
+        if(rowData.get(7) != null){Total = rowData.get(7);} else{Total = "";}
+
+
     }
 }
